@@ -9,9 +9,19 @@ export default class Marker extends Component {
     return (
       <div>
         {this.props.$hover ? (
-          <img style={greatPlaceStyle} src={HouseHover} alt="HouseHover" />
+          <img
+            className="marker"
+            style={greatPlaceStyle}
+            src={HouseHover}
+            alt="HouseHover"
+          />
         ) : (
-          <img style={greatPlaceStyle} src={House} alt="House" />
+          <img
+            className="marker"
+            style={greatPlaceStyle}
+            src={House}
+            alt="House"
+          />
         )}
       </div>
     );

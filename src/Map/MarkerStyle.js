@@ -6,7 +6,7 @@ const greatPlaceStyle = {
   position: "absolute",
   width: K_CIRCLE_SIZE,
   left: -K_CIRCLE_SIZE / 2,
-  top: -K_CIRCLE_SIZE
+  top: -K_CIRCLE_SIZE / 2
 };
 
 export { greatPlaceStyle };
