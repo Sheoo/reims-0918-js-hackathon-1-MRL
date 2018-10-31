@@ -3,6 +3,7 @@ import "./App.css";
 import { Container, Col, Row } from "reactstrap";
 import GoogleMaps from "./Map/googleMaps";
 import CandiesList from "./CandiesList";
+import Header from "./Header";
 
 const listCandies = [
   "3103220025338",
@@ -69,15 +70,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <Container className="ml-0">
           <Row>
             <GoogleMaps />
           </Row>
           <Row className="position">
             <Col xs={{ size: 5, offset: 9 }}>
-              <button onClick={() => this.unlockCandy("5000159386821")}>
-                test
-              </button>
               <CandiesList
                 list={this.displayCandyDex(this.state.candiesUnlocked)}
               />
