@@ -84,11 +84,11 @@ class App extends Component {
             <GoogleMaps handleClick={this.unlockButton} list={listCandies} />
           </Row>
           <Row className="position">
-            <Col xs={{ size: 5, offset: 9 }}>
+            {/* <Col xs={{ size: 5, offset: 9 }}>
               <CandiesList
                 list={this.displayCandyDex(this.state.candiesUnlocked)}
               />
-            </Col>
+            </Col> */}
           </Row>
           <Row>
             {this.state.buttonUnlocked && <div>
@@ -96,7 +96,7 @@ class App extends Component {
               className="font"
               style={{ fontSize: "35px", color: "white", padding: "30px" }}
             >
-              Ready to play? Find four candies in the haunted room before it's
+              Ready to play? Find five candies in the haunted room before it's
               too late{" "}
             </p>
             <Button

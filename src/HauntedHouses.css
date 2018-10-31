@@ -94,3 +94,24 @@
   z-index: 10;
   opacity: 1;
 }
+
+
+.croco4 {
+  position: absolute;
+  margin-top: 600px;
+  margin-left: 650px;
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+  opacity: 0;
+}
+
+.croco4vis {
+  position: absolute;
+  margin-top: 600px;
+  margin-left: 650px;
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+  opacity: 1;
+}

@@ -11,7 +11,8 @@ class HauntedHouses extends Component {
       croco: false,
       croco1: false,
       croco2: false,
-      croco3: false
+      croco3: false,
+      croco4: false
     };
   }
 
@@ -29,6 +30,9 @@ class HauntedHouses extends Component {
 
   handleClick3() {
     this.setState({ croco3: true });
+  }
+  handleClick4() {
+    this.setState({ croco4: true });
   }
 
   render() {
@@ -59,6 +63,12 @@ class HauntedHouses extends Component {
         <img
           onClick={() => this.handleClick3()}
           className={this.state.croco3 ? "croco3vis" : "croco3"}
+          src={croco}
+          alt="croco"
+        />
+        <img
+          onClick={() => this.handleClick4()}
+          className={this.state.croco4 ? "croco4vis" : "croco4"}
           src={croco}
           alt="croco"
         />
