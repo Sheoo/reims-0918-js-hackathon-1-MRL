@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-import GoogleMap from "./Map/GoogleMaps";
+import { Container, Col, Row } from "reactstrap";
+import GoogleMaps from "./Map/googleMaps";
 import CandiesList from "./CandiesList";
 
 const listCandies = [
@@ -70,6 +71,7 @@ class App extends Component {
         <GoogleMap />
         <button onClick={() => this.unlockCandy("5000159386821")}>test</button>
         <CandiesList list={this.displayCandyDex(this.state.candiesUnlocked)}/>
+
       </div>
     );
   }
