@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-import "";
+import { Container, Col, Row } from "reactstrap";
+import GoogleMaps from "./Map/googleMaps";
 
 const listCandys = [
   3103220025338,
@@ -34,16 +35,28 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        {this.state.candys.map(candy => (
-          <div key={candy.code}>
-            <p>{candy.product.product_name}</p>
-            <img
-              src={candy.product.image_small_url}
-              alt={candy.product.product_name}
-            />
-          </div>
-        ))}
+      <div>
+        <Container className="ml-0">
+          <Row>
+            <GoogleMaps />
+          </Row>
+          <Row className="position">
+            {this.state.candys.map(candy => (
+              <Col xs={3} key={candy.code}>
+                <div className="card">
+                  <img
+                    className="card-img-top"
+                    src={candy.product.image_small_url}
+                    alt={candy.product.product_name}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{candy.product.product_name}</h5>
+                  </div>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </div>
     );
   }
