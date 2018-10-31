@@ -1,5 +1,10 @@
 .house {
-  z-index: 1;
+  position: relative;
+}
+
+
+.countdown {
+  position: absolute;
 }
 
 .croco {

@@ -6,7 +6,7 @@ import { Container, Col, Row, Button } from "reactstrap";
 import GoogleMaps from "./Map/googleMaps";
 import CandiesList from "./CandiesList";
 import HauntedHouses from "./HauntedHouses";
-import Countdown from "./Countdown";
+
 
 const listCandies = [
   "3103220025338",
@@ -23,11 +23,11 @@ class App extends Component {
     super(props);
     this.state = {
       allCandies: [],
-      candiesUnlocked: {},
+      buttonUnlocked: false,
       ready: false
     };
     this.displayCandyDex = this.displayCandyDex.bind(this);
-    this.unlockCandy = this.unlockCandy.bind(this);
+    this.unlockButton = this.unlockButton.bind(this);
   }
 
   displayCandyDex(list) {
@@ -49,9 +49,9 @@ class App extends Component {
     return result;
   }
 
-  unlockCandy(id) {
+  unlockButton() {
     this.setState({
-      candiesUnlocked: { ...this.state.candiesUnlocked, [id]: true }
+      buttonUnlocked: true
     });
   }
 
@@ -81,7 +81,7 @@ class App extends Component {
         <Header />
         <Container className="ml-0">
           <Row>
-            <GoogleMaps />
+            <GoogleMaps handleClick={this.unlockButton} list={listCandies} />
           </Row>
           <Row className="position">
             <Col xs={{ size: 5, offset: 9 }}>
@@ -91,11 +91,12 @@ class App extends Component {
             </Col>
           </Row>
           <Row>
+            {this.state.buttonUnlocked && <div>
             <p
               className="font"
               style={{ fontSize: "35px", color: "white", padding: "30px" }}
             >
-              Ready to play? Find five candies in the haunted room before it's
+              Ready to play? Find four candies in the haunted room before it's
               too late{" "}
             </p>
             <Button
@@ -110,12 +111,13 @@ class App extends Component {
             >
               Go !
             </Button>
+            
             {this.state.ready && (
               <Fragment className="d-flex">
-                <Countdown className="countdown" />
                 <HauntedHouses />
               </Fragment>
-            )}
+            )}</div>}
+            
           </Row>
         </Container>
         <Footer />

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import house from "./Img/cuisine_N.jpg";
 import croco from "./Img/hari-croco-300x300.png";
 import "./HauntedHouses.css";
+import Countdown from "./Countdown";
 
 class HauntedHouses extends Component {
   constructor() {
@@ -34,6 +35,9 @@ class HauntedHouses extends Component {
     return (
       <div className="d-flex">
         <img className="house" src={house} alt="house" />
+        <div className="countdown">
+        <Countdown  crocos={Object.values(this.state)}/>
+        </div>
         <img
           onClick={() => this.handleClick()}
           className={this.state.croco ? "crocovis" : "croco"}

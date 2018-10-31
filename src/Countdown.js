@@ -47,10 +47,10 @@ export class Countdown extends React.Component {
       <Col className="my-auto text-center" xs="12" md="4">
         {countDown.sec > 0 && (
           <div>
-            <strong className="pulsate-css FontBangers">{countDown.sec}</strong>
+            <strong>{countDown.sec}</strong>
           </div>
         )}
-        {countDown.sec === 0 && (
+        {(countDown.sec === 0 && this.props.crocos.filter(croco => !croco).length > 0) && (
           <img
             style={{ margin: "auto" }}
             src="https://i.giphy.com/media/3uv5v9hwVPKU/giphy.webp"
