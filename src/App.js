@@ -1,11 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./App.css";
 import Header from "./Header";
 import Footer from "./Footer";
-import { Container, Col, Row } from "reactstrap";
+import { Container, Col, Row, Button } from "reactstrap";
 import GoogleMaps from "./Map/googleMaps";
 import CandiesList from "./CandiesList";
 import HauntedHouses from "./HauntedHouses";
+import Countdown from "./Countdown";
 
 const listCandies = [
   "3103220025338",
@@ -22,7 +23,8 @@ class App extends Component {
     super(props);
     this.state = {
       allCandies: [],
-      candiesUnlocked: {}
+      candiesUnlocked: {},
+      ready: false
     };
     this.displayCandyDex = this.displayCandyDex.bind(this);
     this.unlockCandy = this.unlockCandy.bind(this);
@@ -69,6 +71,10 @@ class App extends Component {
     );
   }
 
+  handleCountdown() {
+    this.setState({ ready: true });
+  }
+
   render() {
     return (
       <div className="App">
@@ -85,9 +91,14 @@ class App extends Component {
             </Col>
           </Row>
           <Row>
-            <HauntedHouses />
+            <Button onClick={() => this.handleCountdown()}>Prêt ?</Button>
+            {this.state.ready && (
+              <Fragment className="d-flex">
+                <Countdown className="countdown" />
+                <HauntedHouses />
+              </Fragment>
+            )}
           </Row>
-          
         </Container>
         <Footer />
       </div>
