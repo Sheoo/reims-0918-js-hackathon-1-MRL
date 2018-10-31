@@ -22,6 +22,10 @@ export class googleMaps extends Component {
       width: "100%",
       height: "90vh"
     };
+    const size = {
+      width: "5px",
+      height: "5px"
+    };
     return (
       <Map
         google={this.props.google}
@@ -33,7 +37,10 @@ export class googleMaps extends Component {
         zoom={16}
       >
         <Marker
-          icon={{ url: House }}
+          icon={{
+            url: House,
+            scaledSize: new this.props.google.maps.Size(40, 40)
+          }}
           className="marker"
           name={"House1"}
           onClick={this.onMarkerClick}
@@ -58,14 +65,16 @@ export class googleMaps extends Component {
           </InfoWindow>
         )}
         <Marker
-          icon={{ url: House }}
-          onMouseOver={{ url: HouseHover }}
+          icon={{
+            url: House,
+            scaledSize: new this.props.google.maps.Size(40, 40)
+          }}
           className="marker"
           name={"House2"}
           onClick={this.onMarkerClick}
           position={{
-            lat: 49.2567129,
-            lng: 4.0204196
+            lat: 49.257202,
+            lng: 4.0189
           }}
         />
         {this.state.activeMarker.name === "House2" && (
