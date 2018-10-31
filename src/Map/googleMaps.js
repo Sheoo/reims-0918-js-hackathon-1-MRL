@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import { Button } from "reactstrap";
 import House from "../Img/House.png";
-import HouseHover from "../Img/House-white.png";
 
 export class googleMaps extends Component {
   state = {
@@ -21,10 +20,6 @@ export class googleMaps extends Component {
     const style = {
       width: "100%",
       height: "90vh"
-    };
-    const size = {
-      width: "5px",
-      height: "5px"
     };
     return (
       <Map
