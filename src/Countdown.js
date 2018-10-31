@@ -1,5 +1,6 @@
 import React from "react";
 import { Col } from "reactstrap";
+import "./HauntedHouses.css"
 
 export class Countdown extends React.Component {
   constructor(props) {
@@ -52,7 +53,7 @@ export class Countdown extends React.Component {
         )}
         {(countDown.sec === 0 && this.props.crocos.filter(croco => !croco).length > 0) && (
           <img
-            style={{ margin: "auto" }}
+            className="gif"
             src="https://i.giphy.com/media/3uv5v9hwVPKU/giphy.webp"
             alt="gif"
           />

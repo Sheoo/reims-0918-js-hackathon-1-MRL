@@ -1,16 +1,24 @@
 .house {
   position: relative;
+  margin-left: 60px;
+}
+
+.gif {
+  position: absolute;
+  margin-left: 170px;
+  margin-top: 140px;
 }
 
 
 .countdown {
   position: absolute;
+  margin-left: 60px;
 }
 
 .croco {
   position: absolute;
   margin-top: 190px;
-  margin-left: 15px;
+  margin-left: 70px;
   width: 70px;
   height: 70px;
   z-index: 10;
@@ -20,7 +28,7 @@
 .crocovis {
   position: absolute;
   margin-top: 190px;
-  margin-left: 15px;
+  margin-left: 70px;
   width: 70px;
   height: 70px;
   z-index: 10;
@@ -30,7 +38,7 @@
 .croco1 {
   position: absolute;
   margin-top: 280px;
-  margin-left: 620px;
+  margin-left: 680px;
   width: 70px;
   height: 70px;
   z-index: 10;
@@ -40,7 +48,7 @@
 .croco1vis {
   position: absolute;
   margin-top: 280px;
-  margin-left: 620px;
+  margin-left: 680px;
   width: 70px;
   height: 70px;
   z-index: 10;
@@ -50,7 +58,7 @@
 .croco2 {
   position: absolute;
   margin-top: 410px;
-  margin-left: 420px;
+  margin-left: 480px;
   width: 70px;
   height: 70px;
   z-index: 10;
@@ -60,7 +68,7 @@
 .croco2vis {
   position: absolute;
   margin-top: 410px;
-  margin-left: 420px;
+  margin-left: 480px;
   width: 70px;
   height: 70px;
   z-index: 10;
@@ -70,7 +78,7 @@
 .croco3 {
   position: absolute;
   margin-top: 100px;
-  margin-left: 870px;
+  margin-left: 940px;
   width: 70px;
   height: 70px;
   z-index: 10;
@@ -80,7 +88,7 @@
 .croco3vis {
   position: absolute;
   margin-top: 100px;
-  margin-left: 870px;
+  margin-left: 940px;
   width: 70px;
   height: 70px;
   z-index: 10;
