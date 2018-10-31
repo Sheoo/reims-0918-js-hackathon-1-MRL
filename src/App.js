@@ -2,61 +2,76 @@ import React, { Component } from "react";
 import "./App.css";
 import { Container, Col, Row } from "reactstrap";
 import GoogleMaps from "./Map/googleMaps";
+import CandiesList from "./CandiesList";
 
-const listCandys = [
-  3103220025338,
-  3116740017332,
-  7622210303646,
-  7622210152619,
-  3103220009130,
-  5000159386821,
-  3501271113033
+const listCandies = [
+  "3103220025338",
+  "3116740017332",
+  "7622210303646",
+  "7622210152619",
+  "3103220009130",
+  "5000159386821",
+  "3501271113033"
 ];
 
 class App extends Component {
-  state = {
-    candys: []
-  };
-
-  componentDidMount() {
-    this.getCandys();
+  constructor(props) {
+    super(props);
+    this.state = {
+      allCandies: [],
+      candiesUnlocked: {}
+    };
+    this.displayCandyDex = this.displayCandyDex.bind(this);
+    this.unlockCandy = this.unlockCandy.bind(this);
   }
 
-  getCandys() {
-    for (let i = 0; i < listCandys.length; i++) {
-      fetch(`https://fr.openfoodfacts.org/api/v0/produit/${listCandys[i]}.json`)
+  displayCandyDex (list) {
+    let result = [];
+    let temp = "";
+    let found = {};
+    for (let prop in list) {
+      if (list[prop]) {
+        found = this.state.allCandies.find(function(element) {
+          return element.code === prop
+        });
+        temp = `${found.product.product_name_fr}`;
+        result = [...result, temp];
+      }
+      else {
+        temp = `???`;
+        result = [...result, temp];
+      };
+    };
+    return result;
+  }
+  
+  unlockCandy(id) {
+    this.setState({ candiesUnlocked: {...this.state.candiesUnlocked, [id]: true } });
+  }
+
+  componentDidMount() {
+    listCandies.map(candy =>
+      fetch(`https://fr.openfoodfacts.org/api/v0/produit/${candy}.json`)
         .then(response => response.json())
         .then(data => {
           this.setState({
-            candys: [...this.state.candys, data]
+            allCandies: [...this.state.allCandies, data],
+            candiesUnlocked: {
+              ...this.state.candiesUnlocked,
+              [candy]: false
+            }
           });
-        });
-    }
+        })
+    );
   }
+
   render() {
     return (
-      <div>
-        <Container className="ml-0">
-          <Row>
-            <GoogleMaps />
-          </Row>
-          <Row className="position">
-            {this.state.candys.map(candy => (
-              <Col xs={3} key={candy.code}>
-                <div className="card">
-                  <img
-                    className="card-img-top"
-                    src={candy.product.image_small_url}
-                    alt={candy.product.product_name}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{candy.product.product_name}</h5>
-                  </div>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </Container>
+      <div className="App">
+        <GoogleMap />
+        <button onClick={() => this.unlockCandy("5000159386821")}>test</button>
+        <CandiesList list={this.displayCandyDex(this.state.candiesUnlocked)}/>
+
       </div>
     );
   }
