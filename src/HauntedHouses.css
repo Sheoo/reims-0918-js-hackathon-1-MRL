@@ -1,0 +1,83 @@
+.house {
+  z-index: 1;
+}
+
+.croco {
+  position: absolute;
+  margin-top: 190px;
+  margin-left: 15px;
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+  opacity: 0;
+}
+
+.crocovis {
+  position: absolute;
+  margin-top: 190px;
+  margin-left: 15px;
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+  opacity: 1;
+}
+
+.croco1 {
+  position: absolute;
+  margin-top: 280px;
+  margin-left: 620px;
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+  opacity: 0;
+}
+
+.croco1vis {
+  position: absolute;
+  margin-top: 280px;
+  margin-left: 620px;
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+  opacity: 1;
+}
+
+.croco2 {
+  position: absolute;
+  margin-top: 410px;
+  margin-left: 420px;
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+  opacity: 0;
+}
+
+.croco2vis {
+  position: absolute;
+  margin-top: 410px;
+  margin-left: 420px;
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+  opacity: 1;
+}
+
+.croco3 {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 870px;
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+  opacity: 0;
+}
+
+.croco3vis {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 870px;
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+  opacity: 1;
+}
