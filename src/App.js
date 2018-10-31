@@ -91,7 +91,25 @@ class App extends Component {
             </Col>
           </Row>
           <Row>
-            <Button onClick={() => this.handleCountdown()}>Prêt ?</Button>
+            <p
+              className="font"
+              style={{ fontSize: "35px", color: "white", padding: "30px" }}
+            >
+              Ready to play? Find five candies in the haunted room before it's
+              too late{" "}
+            </p>
+            <Button
+              className="font"
+              style={{
+                height: "75px",
+                marginTop: "5px",
+                fontSize: "35px",
+                backgroundColor: "#040201"
+              }}
+              onClick={() => this.handleCountdown()}
+            >
+              Go !
+            </Button>
             {this.state.ready && (
               <Fragment className="d-flex">
                 <Countdown className="countdown" />

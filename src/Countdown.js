@@ -52,6 +52,7 @@ export class Countdown extends React.Component {
         )}
         {countDown.sec === 0 && (
           <img
+            style={{ margin: "auto" }}
             src="https://i.giphy.com/media/3uv5v9hwVPKU/giphy.webp"
             alt="gif"
           />
