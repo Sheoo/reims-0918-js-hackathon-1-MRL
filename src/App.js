@@ -25,28 +25,29 @@ class App extends Component {
     this.unlockCandy = this.unlockCandy.bind(this);
   }
 
-  displayCandyDex (list) {
+  displayCandyDex(list) {
     let result = [];
     let temp = "";
     let found = {};
     for (let prop in list) {
       if (list[prop]) {
         found = this.state.allCandies.find(function(element) {
-          return element.code === prop
+          return element.code === prop;
         });
         temp = `${found.product.product_name_fr}`;
         result = [...result, temp];
-      }
-      else {
+      } else {
         temp = `???`;
         result = [...result, temp];
-      };
-    };
+      }
+    }
     return result;
   }
-  
+
   unlockCandy(id) {
-    this.setState({ candiesUnlocked: {...this.state.candiesUnlocked, [id]: true } });
+    this.setState({
+      candiesUnlocked: { ...this.state.candiesUnlocked, [id]: true }
+    });
   }
 
   componentDidMount() {
@@ -68,10 +69,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <GoogleMap />
-        <button onClick={() => this.unlockCandy("5000159386821")}>test</button>
-        <CandiesList list={this.displayCandyDex(this.state.candiesUnlocked)}/>
-
+        <Container className="ml-0">
+          <Row>
+            <GoogleMaps />
+          </Row>
+          <Row className="position">
+            <Col xs={{ size: 5, offset: 9 }}>
+              <button onClick={() => this.unlockCandy("5000159386821")}>
+                test
+              </button>
+              <CandiesList
+                list={this.displayCandyDex(this.state.candiesUnlocked)}
+              />
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

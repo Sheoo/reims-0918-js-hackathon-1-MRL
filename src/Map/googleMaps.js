@@ -64,8 +64,8 @@ export class googleMaps extends Component {
           name={"House2"}
           onClick={this.onMarkerClick}
           position={{
-            lat: 49.2470935,
-            lng: 4.0202065
+            lat: 49.2567129,
+            lng: 4.0204196
           }}
         />
         {this.state.activeMarker.name === "House2" && (
