@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import { Button } from "reactstrap";
+import House from "../Img/House.png";
+import HouseHover from "../Img/House-white.png";
 
 export class googleMaps extends Component {
   state = {
@@ -15,15 +17,6 @@ export class googleMaps extends Component {
       activeMarker: marker,
       showingInfoWindow: true
     });
-
-  onMapClicked = props => {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        showingInfoWindow: false,
-        activeMarker: null
-      });
-    }
-  };
   render() {
     const style = {
       width: "100%",
@@ -34,18 +27,19 @@ export class googleMaps extends Component {
         google={this.props.google}
         style={style}
         initialCenter={{
-          lat: 49.1242534,
-          lng: 4.5369589
+          lat: 49.2570935,
+          lng: 4.0202065
         }}
-        zoom={14}
-        onClick={this.onMapClicked}
+        zoom={16}
       >
         <Marker
+          icon={{ url: House }}
+          className="marker"
           name={"House1"}
           onClick={this.onMarkerClick}
           position={{
-            lat: 49.1242534,
-            lng: 4.5369589
+            lat: 49.2570935,
+            lng: 4.0202065
           }}
         />
         {this.state.activeMarker.name === "House1" && (
@@ -64,11 +58,14 @@ export class googleMaps extends Component {
           </InfoWindow>
         )}
         <Marker
+          icon={{ url: House }}
+          onMouseOver={{ url: HouseHover }}
+          className="marker"
           name={"House2"}
           onClick={this.onMarkerClick}
           position={{
-            lat: 49.1042534,
-            lng: 4.5369589
+            lat: 49.2470935,
+            lng: 4.0202065
           }}
         />
         {this.state.activeMarker.name === "House2" && (
