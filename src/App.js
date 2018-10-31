@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
+import Header from "./Header";
+import ImageMapper from "react-image-mapper";
+import Footer from "./Footer";
 import { Container, Col, Row } from "reactstrap";
 import GoogleMaps from "./Map/googleMaps";
 import CandiesList from "./CandiesList";
-import Header from "./Header";
 import HauntedHouses from "./HauntedHouses";
 
 const listCandies = [
@@ -86,7 +88,9 @@ class App extends Component {
           <Row>
             <HauntedHouses />
           </Row>
+          
         </Container>
+        <Footer />
       </div>
     );
   }

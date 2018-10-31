@@ -1,13 +1,11 @@
 import React from "react";
-import fond from "./Img/FOND.jpg";
 import "./Header.css";
 
 const Header = () => (
-  <div className="fondlogo">
-    <header>
-      <img className="fond" src={fond} alt="fond" />
-    </header>
-  </div>
+  <header style={{ textAlign: "center" }}>
+    <img src="images/Logo-blanc.png" className="center" alt="logo candy" />
+    <p className="text-center">Come hunt your halloween sweets</p>
+  </header>
 );
 
 export default Header;
