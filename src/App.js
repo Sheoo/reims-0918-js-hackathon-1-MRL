@@ -9,7 +9,6 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <img src="images/cuisine_N.jpg" />
 
         <Footer />
       </div>
